@@ -156,19 +156,3 @@ def rmse(preds: np.ndarray, actuals: np.ndarray):
     Compute root mean squared error.
     '''
     return np.sqrt(np.mean(np.power(preds - actuals, 2)))
-
-
-
-X = []
-Y = []
-Weights = init_weights(13,4)
-train = training(X,Y,Weights,102,0.01,1000)
-pred = predict(X,train)
-print(pred.shape,y_test.shape)
-
-plt.xlabel("Predicted Value : ")
-plt.ylabel("Actual value :")
-plt.xlim([0,51])
-plt.ylim([0,51])
-plt.scatter(pred[0],y_test[0])
-plt.plot([0,51],[0,51])
